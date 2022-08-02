@@ -18,15 +18,31 @@
                 <div class="container">
                     <div class="col-md-12 mt-2">
                         <h2 class="mb-4">Add student</h2>
-                        <form method="post" action="{{ url('/add-student') }}">
+                        <form method="post" action="{{ url('/') }}/add-student">
+                            @csrf
+
+                            @php
+                                print_r($errors->all());
+                            @endphp
+
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <label for="name">Name</label>
                                     <input type="text" name="name" id="" class="form-control">
+                                    <span class="text-danger">
+                                        @error('name')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <label for="email">Email</label>
                                     <input type="text" name="email" id="" class="form-control">
+                                    <span class="text-danger">
+                                        @error('email')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                             </div>
 
@@ -45,10 +61,20 @@
                                       <option value="Grade 9">Grade 9</option>
                                       <option value="Grade 10">Grade 10</option>
                                     </select>
+                                    <span class="text-danger">
+                                        @error('grade')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <label for="roll no">Rollno</label>
                                     <input type="text" name="rollno" id="" class="form-control">
+                                    <span class="text-danger">
+                                        @error('rollno')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                             </div>
 
