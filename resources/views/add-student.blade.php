@@ -20,15 +20,13 @@
                         <h2 class="mb-4">Add student</h2>
                         <form method="post" action="{{ url('/') }}/add-student">
                             @csrf
-
                             @php
-                                print_r($errors->all());
+                                //print_r($errors->all());
                             @endphp
-
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" name="name" id="" class="form-control">
+                                    <input type="text" name="name" id="" value="{{ old('name') }}" class="form-control">
                                     <span class="text-danger">
                                         @error('name')
                                             {{ $message }}
@@ -37,7 +35,7 @@
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" name="email" id="" class="form-control">
+                                    <input type="text" name="email" value="{{ old('email') }}" id="" class="form-control">
                                     <span class="text-danger">
                                         @error('email')
                                             {{ $message }}
@@ -69,7 +67,7 @@
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <label for="roll no">Rollno</label>
-                                    <input type="text" name="rollno" id="" class="form-control">
+                                    <input type="text" name="rollno" value="{{ old('rollno') }}" id="" class="form-control">
                                     <span class="text-danger">
                                         @error('rollno')
                                             {{ $message }}
@@ -81,22 +79,22 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="gender">Gender</label>
-                                    <input type="text" name="gender" id="" class="form-control">
+                                    <input type="text" name="gender" value="{{ old('gender') }}" id="" class="form-control">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="age">Age</label>
-                                    <input type="text" name="age" id="" class="form-control">
+                                    <input type="text" name="age" value="{{ old('age') }}" id="" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row mt-2">
                                 <div class="col-md-6">
                                     <label for="password">Password</label>
-                                    <input type="text" name="password" id="" class="form-control">
+                                    <input type="text" name="password" value="{{ old('password') }}" id="" class="form-control">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="confirm password">Confirm Password</label>
-                                    <input type="text" name="confirmpassword" id="" class="form-control">
+                                    <input type="password" name="confirmpassword" value="{{ old('confirmpassword') }}" id="" class="form-control">
                                 </div>
                             </div>
 
