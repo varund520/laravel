@@ -22,6 +22,8 @@ use App\Http\Controllers\StudentController;
 
     Route::post('/add-student',[StudentController::class,'AddStudent']);
 
+    Route::get('/view-students',[StudentController::class,'ViewStudents']);
+
 
 
 
